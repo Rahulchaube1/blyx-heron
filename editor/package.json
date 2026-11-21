@@ -1,0 +1,57 @@
+{
+  "name": "blyx-heron",
+  "displayName": "Blyx Heron",
+  "description": "Track one sensor feed’s accepted messages, duplicate sequence numbers, out-of-order arrivals and missed deadlines.",
+  "version": "0.1.0",
+  "publisher": "RahulChaube",
+  "license": "(MIT OR Apache-2.0)",
+  "icon": "logo.png",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "blyx",
+    "heron",
+    "framework"
+  ],
+  "homepage": "https://www.blyx-lang.space/packages/heron",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rahulchaube1/blyx-heron.git",
+    "directory": "editor"
+  },
+  "bugs": {
+    "url": "https://github.com/Rahulchaube1/blyx-heron/issues"
+  },
+  "extensionDependencies": [
+    "RahulChaube.blyx-language"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "blyx",
+        "path": "./snippets/framework.json"
+      }
+    ],
+    "walkthroughs": [
+      {
+        "id": "heron.start",
+        "title": "Get started with Heron",
+        "description": "Track one sensor feed’s accepted messages, duplicate sequence numbers, out-of-order arrivals and missed deadlines.",
+        "steps": [
+          {
+            "id": "run",
+            "title": "Run the Heron example",
+            "description": "Create an empty .blyx file, insert blyx-heron-demo and choose **Blyx: Run File**.\n[Open the documentation](https://www.blyx-lang.space/packages/heron)",
+            "media": {
+              "markdown": "walkthrough.md"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

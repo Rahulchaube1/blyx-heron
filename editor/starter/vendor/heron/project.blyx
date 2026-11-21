@@ -1,0 +1,24 @@
+use std::cli;
+use std::text;
+use std::fs;
+use heron;
+fn main() {
+    let args = cli_args();
+    if args_len(args) > 1 { stderr_line("Usage: project [sequence,receipt_ms CSV]"); process_exit(2); }
+    let mut stream = "100,0\n101,12\n101,16\n104,30\n102,32";
+    if args_len(args) == 1 { stream = read_text(args_at(args, 0)); }
+    let rows = text_lines(stream);
+    let mut state = he_start();
+    let mut i = 0;
+    while i < args_len(rows) {
+        let pair = text_split(args_at(rows, i), ",");
+        if args_len(pair) != 2 { stderr_line("Expected sequence,receipt_ms"); process_exit(1); }
+        let seq = args_at(pair, 0); let stamp = args_at(pair, 1);
+        if !text_is_number(seq) || !text_is_number(stamp) { stderr_line("Invalid measurement"); process_exit(1); }
+        state = he_observe(state, text_number(seq), text_number(stamp));
+        if len(state) != 6 { stderr_line("Expected nonnegative whole numbers"); process_exit(1); }
+        i += 1;
+    }
+    print!("accepted="); println!(at(state, 2)); print!("duplicates="); println!(at(state, 3));
+    print!("out_of_order="); println!(at(state, 4)); print!("skipped_ids="); println!(at(state, 5));
+}

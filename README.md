@@ -1,10 +1,14 @@
-<img src="assets/logo.png" width="112" height="112" alt="Heron bird logo">
+<img src="assets/logo.png" width="112" height="112" alt="A blue heron folds its neck and points its golden bill forward.">
 
 # Blyx Heron
 
 Track one sensor feed’s accepted messages, duplicate sequence numbers, out-of-order arrivals and missed deadlines.
 
 A replayed packet can make an idle sensor appear healthy if every arrival resets its last-seen timer. ROS 2 distinguishes delivery and deadline policies. Heron lets an application choose a freshness deadline and updates that timer only when it accepts a new sample. [ROS 2, Quality of service settings](https://docs.ros.org/en/jazzy/Concepts/Intermediate/About-Quality-of-Service-Settings.html)
+
+## Editor extension
+
+Install **RahulChaube.blyx-heron** to run the worked example and use the framework’s function completions in a Blyx file. Open an empty `.blyx` file, enter `blyx-heron-demo`, then choose **Blyx: Run File**. [Editor downloads](https://www.blyx-lang.space/packages/heron#editor) · [Download the extension](https://github.com/Rahulchaube1/blyxxxx/releases/download/framework-editors-v0.1.0/blyx-heron-0.1.0.vsix) · [Starter with framework source](https://github.com/Rahulchaube1/blyxxxx/releases/download/framework-editors-v0.1.0/blyx-heron-starter-0.1.0.zip)
 
 ## Install and run
 
